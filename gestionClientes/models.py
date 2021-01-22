@@ -9,3 +9,4 @@ class Cliente(m.Model):
     birth = m.DateField(verbose_name="Fecha nacimineto", blank=False)
     creation_day = m.DateField(verbose_name="Fecha creacion",blank=False)
     imge = m.ImageField(verbose_name="foto")
+    band = m.BooleanField(verbose_name="Bandera de borrado")

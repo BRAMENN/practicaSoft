@@ -24,8 +24,18 @@ urlpatterns = [
         name = 'listar_usuarios'
     ),
     path(
+        route = 'create/',
+        view = crearCliente.as_view(),
+        name = 'crear_cliente'
+    ),
+    path(
         route = 'listClients/',
         view = ListUser.as_view(),
-        name = 'listar_usuarios'
+        name = 'listar_clientes'
+    ),
+    path(
+        route = 'eliminarView/',
+        view = eliminarCliente.as_view(),
+        name = 'eliminar_cliente'
     ),
 ]

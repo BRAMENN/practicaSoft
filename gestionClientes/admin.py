@@ -9,7 +9,8 @@ class ClienteAdmin(admin.ModelAdmin):
         'email',
         'birth',
         'creation_day',
-        'imge'
+        'imge',
+        'band'
     ) 
 
 
