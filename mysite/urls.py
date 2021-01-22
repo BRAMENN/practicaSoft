@@ -20,7 +20,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path(
         route = 'list/',
-        view = ListUsers.as_view(),
+        view = Users.as_view(),
+        name = 'listar_usuarios'
+    ),
+    path(
+        route = 'listClients/',
+        view = ListUser.as_view(),
         name = 'listar_usuarios'
     ),
 ]
