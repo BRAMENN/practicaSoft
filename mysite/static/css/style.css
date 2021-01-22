@@ -1,0 +1,60 @@
+.contenedor{ 
+    width: 100%; 
+    min-height: 200px;
+    margin: 0 auto;
+
+}
+.top{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    padding: 30px;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 30px;
+}
+.input-group{
+    margin-top: 30px;
+    
+}
+.formSearch{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+
+}
+.lista{
+
+    margin-left: 30px;
+    margin-right: 30px;
+}
+img{
+    width: 50px; 
+    height: 50px;
+
+    border-radius: 50%;
+  }
+.persona{
+    font-size: 15px; 
+
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    width: 90%;
+}
+.cont1{
+    margin-right: auto;
+    margin-left: 2%;
+}
+.cabecera{
+    background: rgb(5, 5, 46);
+    height: 200px;
+    color: white;
+}
+
+body{
+    background:  rgb(210, 210, 214);
+}
