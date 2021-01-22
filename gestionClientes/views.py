@@ -5,6 +5,7 @@ from django.views.generic import TemplateView, ListView
 from gestionClientes.models import *
 from django.core import serializers
 from django.http import HttpResponse
+from datetime import datetime
 
 class Users(TemplateView):
     template_name = 'list.html'
@@ -41,4 +42,21 @@ class eliminarCliente(TemplateView):
         identificador = Cliente.objects.get(pk=dato)
         identificador.band = True
         identificador.save()
+        return HttpResponse()
+
+class guardarCliente(TemplateView):
+
+    def get(self, request, *args, **kwargs):
+        name = request.GET['name']
+        DNI = request.GET['DNI']
+        birth = request.GET['birth']
+        email = request.GET['email']
+        cliente = Cliente(  DNI = DNI,
+                            name = name,
+                            email = email,
+                            birth = birth,
+                            creation_day = datetime.now(),
+                            band = False
+                            )
+        cliente.save()
         return HttpResponse()

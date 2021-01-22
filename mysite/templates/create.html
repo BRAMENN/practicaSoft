@@ -21,7 +21,7 @@
           </div>
         </div>
         <div class="formu">
-          <form id="form-guardar" method="GET">
+          <form id="form-guardar" method="get">
             <div class="form-group">
               <label for="exampleInputEmail1">Nombre completo</label>
               <input name="nombre" type="text" class="form-control"  aria-describedby="emailHelp" placeholder="Nombre completo">
@@ -36,10 +36,10 @@
             </div>
             <div class="form-group">
               <label for="exampleInputPassword1">Email</label>
-              <input name="Email" type="email" class="form-control"  placeholder="Email">
+              <input name="email" type="email" class="form-control"  placeholder="Email">
             </div>
-            <button type="submit" class="btn btn-danger">Cancelar</button>
-            <button onclick="guardarCliente()" type="submit" class="btn btn-primary">Guardar </button>
+            <button onclick="location.href='{% url 'listar_usuarios' %}'"  type="button" class="btn btn-danger">Cancelar</button>
+            <button  type="input" class="btn btn-primary" onclick="guardarCliente()">Guardar</button>
           </form>
         </div>
         
@@ -55,9 +55,28 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
+      
       function guardarCliente(){
           var form = new FormData(document.getElementById("form-guardar"));
-          console.log(form.get('nombre'));
+          console.log(form.get('email'))
+            $.ajax({
+              data: {
+                      "pk":form.pk,
+                      "name":form.get('nombre'),
+                      "DNI":form.get('DNI'),
+                      "birth":form.get('fechaN'),
+                      "email":form.get('email')
+                    },
+              url: '/guardarView/',
+              type: 'get',
+              success: function(){
+                alert("Cliente registrado");
+              },
+              error: function(error){
+                console.log(error);
+              }
+            });
+          
       }
     </script>
   </body>

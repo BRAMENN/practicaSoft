@@ -38,4 +38,9 @@ urlpatterns = [
         view = eliminarCliente.as_view(),
         name = 'eliminar_cliente'
     ),
+    path(
+        route = 'guardarView/',
+        view = guardarCliente.as_view(),
+        name = 'eliminar_cliente'
+    ),
 ]
